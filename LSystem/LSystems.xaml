@@ -1,0 +1,145 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:LSystem"
+                    xmlns:ls="clr-namespace:Meytes.WPF.LSystemShape;assembly=LSystemShape"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    >
+
+
+    <CompositeCollection x:Key="LsystemDefinitions">
+        <sys:String>LSystem1</sys:String>
+        <sys:String>LSystem2</sys:String>
+        <sys:String>LSystem3</sys:String>
+        <sys:String>LSystem4</sys:String>
+        <sys:String>LSystem5</sys:String>
+        <sys:String>LSystem6</sys:String>
+        <sys:String>LSystem7</sys:String>
+        <sys:String>LSystem8</sys:String>
+        <sys:String>LSystem9</sys:String>
+        <sys:String>LSystem10</sys:String>
+    </CompositeCollection>
+    
+    <ls:LSystem x:Key="LSystem1" Axiom="F+XF+F+XF" Interation="5" StartAngle="45"
+                                            StartPoint="0,0">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="X" To="XF-F+F-XF+F+XF-F+F-X" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="F" Action="Forward" Value="4.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-90.0" />
+            <ls:LOperation Name="+" Action="Turn" Value="+90.0" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+
+    <ls:LSystem x:Key="LSystem2" Axiom="F+XF+F+XF" Interation="5" StartAngle="45"
+                                        StartPoint="0,0">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="X" To="XF-F+F-XF+F+XF-F+F-X" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="F" Action="Forward" Value="4.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-90.0" />
+            <ls:LOperation Name="+" Action="Turn" Value="+90.0" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+
+    <ls:LSystem x:Key="LSystem3" Axiom="F+F+F+F" Interation="3" StartAngle="45"
+                                        StartPoint="0,200">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="F" To="FF+F-F+F+FF" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="F" Action="Forward" Value="8.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-90.0" />
+            <ls:LOperation Name="+" Action="Turn" Value="+90.0" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+
+    <ls:LSystem x:Key="LSystem4" Axiom="F+F+F+F" Interation="3" StartAngle="45">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="F" To="F+F-F-FF+F+F-F" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="F" Action="Forward" Value="4.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-90.0" />
+            <ls:LOperation Name="+" Action="Turn" Value="+90.0" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+
+    <ls:LSystem x:Key="LSystem5" Axiom="0" Interation="6" StartAngle="45">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="0" To="1[-0]+0" />
+            <ls:LExpression From="1" To="11" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="0" Action="Forward" Value="3.0" />
+            <ls:LOperation Name="1" Action="Forward" Value="3.0" />
+            <ls:LOperation Name="[" Action="Save" />
+            <ls:LOperation Name="]" Action="Restore" />
+            <ls:LOperation Name="-" Action="Turn" Value="-45" />
+            <ls:LOperation Name="+" Action="Turn" Value="+45" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+
+    <ls:LSystem x:Key="LSystem6" Axiom="A" Interation="6" StartAngle="90">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="A" To="-BF+AFA+FB-" />
+            <ls:LExpression From="B" To="+AF-BFB-FA+" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="F" Action="Forward" Value="3.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-90" />
+            <ls:LOperation Name="+" Action="Turn" Value="+90" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+
+    <ls:LSystem x:Key="LSystem7" Axiom="A" Interation="6">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="A" To="+B-A-B+" />
+            <ls:LExpression From="B" To="-A+B+A-" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="A" Action="Forward" Value="3.0" />
+            <ls:LOperation Name="B" Action="Forward" Value="3.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-60" />
+            <ls:LOperation Name="+" Action="Turn" Value="+60" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+    <ls:LSystem x:Key="LSystem8" Axiom="F-G-G" Interation="5" StartPoint="50,50" StartAngle="90">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="F" To="F-G+F+G-F" />
+            <ls:LExpression From="G" To="GG" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="G" Action="Forward" Value="5.0" />
+            <ls:LOperation Name="F" Action="Forward" Value="5.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-120.0" />
+            <ls:LOperation Name="+" Action="Turn" Value="+120.0" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+    <ls:LSystem x:Key="LSystem9" Axiom="X" Interation="5" StartPoint="50,50" StartAngle="45">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="X" To="F-[[X]+X]+F[+FX]-X" />
+            <ls:LExpression From="F" To="FF" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="F" Action="Forward" Value="5.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-21.0" />
+            <ls:LOperation Name="+" Action="Turn" Value="+21.0" />
+            <ls:LOperation Name="[" Action="Save" />
+            <ls:LOperation Name="]" Action="Restore" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+    <ls:LSystem  x:Key="LSystem10" Axiom="X" Interation="10" StartPoint="50,50" StartAngle="45">
+        <ls:LSystem.Expressions>
+            <ls:LExpression From="X" To="X+YF+" />
+            <ls:LExpression From="Y" To="-FX-Y" />
+        </ls:LSystem.Expressions>
+        <ls:LSystem.Operations>
+            <ls:LOperation Name="F" Action="Forward" Value="10.0" />
+            <ls:LOperation Name="-" Action="Turn" Value="-90.0" />
+            <ls:LOperation Name="+" Action="Turn" Value="+90.0" />
+        </ls:LSystem.Operations>
+    </ls:LSystem>
+
+</ResourceDictionary>

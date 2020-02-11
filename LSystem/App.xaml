@@ -1,0 +1,8 @@
+﻿<Application x:Class="LSystemVisual.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <SolidColorBrush x:Key="123321" Color="#e6e6e6" Opacity="0.5"/>
+    </Application.Resources>
+</Application>
