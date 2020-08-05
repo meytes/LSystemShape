@@ -57,22 +57,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <None Include="Trash\ExpressionCollection.cs" />
-    <None Include="Trash\LExpression.cs" />
-    <None Include="Trash\LOperation.cs" />
-    <None Include="Trash\LSystemGenerator.cs" />
-    <None Include="Trash\LSystemShape.cs" />
-    <None Include="Trash\LSystemStringTranslator.cs" />
-    <None Include="Trash\LSystemTypeConverter.cs" />
-    <None Include="Trash\LSystemValueSerializer.cs" />
-    <None Include="Trash\OperationCollection.cs" />
+    <Compile Include="Commands\AddOperationCommand.cs" />
+    <Compile Include="Commands\AppendExpressionCommand.cs" />
+    <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\CommandListener.cs" />
     <Compile Include="Helpers\Grid.cs" />
     <Compile Include="Helpers\ResourceBinding.cs" />
-    <Compile Include="Themes\ThemesResouceKeys.cs" />
-    <Compile Include="Trash\RadiolaShape.cs" />
-    <None Include="Trash\Rule.cs" />
-    <None Include="Trash\Turtle.cs" />
-    <None Include="Trash\TurtleAction.cs" />
+    <Compile Include="Helpers\TextBoxReturnAccepter.cs" />
     <Page Include="LSystems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,12 +80,27 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <None Include="Trash\LSystem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Trash\Cardiola.xaml">
+    <Page Include="Themes\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\DefaultBrushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ExpanderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TextBoxStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

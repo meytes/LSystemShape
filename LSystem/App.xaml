@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Startup="Application_Startup">
     <Application.Resources>
-        <SolidColorBrush x:Key="123321" Color="#e6e6e6" Opacity="0.5"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Icons.xaml"/>
+                <ResourceDictionary Source="Themes/DefaultBrushes.xaml"/>
+                <ResourceDictionary Source="Themes/ExpanderStyle.xaml"/>
+                <ResourceDictionary Source="Themes/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

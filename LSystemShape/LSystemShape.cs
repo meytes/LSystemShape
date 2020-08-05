@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -11,6 +12,29 @@ namespace Meytes.WPF.LSystemShape
     [ContentProperty("System")]
     public class LSystemShape : Shape
     {
+        public LSystemShape()
+        {
+            Focusable = true;
+        }
+        static LSystemShape()
+        {
+            CommandManager.RegisterClassCommandBinding(typeof(LSystemShape), new CommandBinding(RoutedCommands.RemoveExpression, OnRemoveExpression, CanRemoveExpression));
+        }
+
+        private static void CanRemoveExpression(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+            e.Handled = true;
+        }
+
+        private static void OnRemoveExpression(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (sender is LSystemShape shape && e.Parameter is LExpression exp)
+            {
+                shape.System.Expressions.Remove(exp);
+            }
+        }
+
         public LSystem System
         {
             get { return (LSystem)GetValue(SystemProperty); }
@@ -38,7 +62,7 @@ namespace Meytes.WPF.LSystemShape
         {
             if (geometry.Figures.Count == 0)
             {
-                geometry.Figures.Add(new PathFigure() { Segments = { new PolyLineSegment() }, StartPoint = turtle.CurrentPosition.Point });
+                geometry.Figures.Add(new PathFigure() { Segments = { new PolyLineSegment() }, StartPoint = turtle.CurrentPosition.Point, IsClosed = System.IsClosed, IsFilled = System.IsFilled });
             }
             for (var i = 0; i < expression.Length; i++)
             {
@@ -65,7 +89,7 @@ namespace Meytes.WPF.LSystemShape
                             break;
                         case TurtleAction.Restore:
                             position = turtle.RestoreAngle();
-                            geometry.Figures.Add(new PathFigure() { Segments = { new PolyLineSegment() }, StartPoint = position.Point });
+                            geometry.Figures.Add(new PathFigure() { Segments = { new PolyLineSegment() }, StartPoint = position.Point, IsClosed = System.IsClosed, IsFilled = System.IsFilled });
                             break;
                     }
                 }

@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using OriginalGrid = System.Windows.Controls.Grid;
 
-namespace LSystem.Helpers
+namespace LSystemVisual.Helpers
 {
     /* Example:
      * 

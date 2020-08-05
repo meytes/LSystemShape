@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="LSystem\ExpressionCollection.cs" />
     <Compile Include="LSystem\FreezableDictionary.cs" />
+    <Compile Include="RoutedCommands.cs" />
     <Compile Include="Turtle\ITurtle.cs" />
     <Compile Include="LSystem\LExpression.cs" />
     <Compile Include="LSystem\LOperation.cs" />
